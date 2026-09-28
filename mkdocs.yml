@@ -1,0 +1,161 @@
+site_name: Reforge
+site_description: LLM-driven legacy codebase analysis and documentation framework
+site_url: https://aditi-consulting.github.io/reforge/
+repo_url: https://github.com/Aditi-Consulting/reforge
+repo_name: Aditi-Consulting/reforge
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2024-2026 Aditi Consulting
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - header.autohide
+  logo: assets/logo-white.svg
+  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  font:
+    text: Lato
+    code: Roboto Mono
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Aditi-Consulting/reforge
+  extraction_types: 10
+  version: "1.0.0"
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - social
+  - tags
+  - glightbox
+  - blog:
+      blog_dir: blog
+      post_date_format: long
+  - macros:
+      module_name: docs/macros
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - getting-started/index.md
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+      - Agent Setup: getting-started/agent-setup.md
+  - Commands:
+      - commands/index.md
+      - Planning & Setup:
+          - plan: commands/plan.md
+          - init: commands/init.md
+          - profile: commands/profile.md
+          - analyze: commands/analyze.md
+      - Extraction:
+          - extract: commands/extract.md
+          - glossary: commands/glossary.md
+          - clarify: commands/clarify.md
+      - Validation:
+          - audit: commands/audit.md
+          - fix: commands/fix.md
+          - reanalyze: commands/reanalyze.md
+      - Generation:
+          - generate: commands/generate.md
+          - status: commands/status.md
+      - Validation & Quality:
+          - validate: commands/validate.md
+          - metrics: commands/metrics.md
+          - hotspot: commands/hotspot.md
+      - Analysis Depth:
+          - delta: commands/delta.md
+          - dead-code: commands/dead-code.md
+          - security: commands/security.md
+          - trace: commands/trace.md
+          - compare: commands/compare.md
+      - Modernization:
+          - estimate: commands/estimate.md
+          - migrate: commands/migrate.md
+          - recommend: commands/recommend.md
+      - Reporting & Integration:
+          - dashboard: commands/dashboard.md
+          - export: commands/export.md
+          - report: commands/report.md
+  - Guides:
+      - guides/index.md
+      - Typical Workflow: guides/workflow.md
+      - Effort Estimation: guides/effort-estimation.md
+      - Configuration: guides/configuration.md
+      - Extraction Types: guides/extraction-types.md
+      - HTML Reports: guides/html-reports.md
+      - Claude Code Teams: guides/claude-code-teams.md
+  - Architecture:
+      - architecture/index.md
+      - How It Works: architecture/overview.md
+      - Constitution: architecture/constitution.md
+      - Schemas: architecture/schemas.md
+  - Blog:
+      - blog/index.md
+  - Tags: tags.md
+  - Troubleshooting: troubleshooting.md

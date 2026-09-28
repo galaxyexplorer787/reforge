@@ -1,0 +1,245 @@
+/* ============================================================
+   Aditi Consulting Brand Theme
+   Navy: #00203A  |  Cyan: #1FB3D9  |  Orange: #FFA301
+   Body font: Lato  |  Headings: Roboto
+   ============================================================ */
+
+/* ---- Brand color tokens ---- */
+:root {
+  --aditi-navy: #00203A;
+  --aditi-cyan: #1FB3D9;
+  --aditi-orange: #FFA301;
+  --aditi-body: #494A52;
+  --aditi-light-bg: #F4F4F4;
+}
+
+/* Material theme overrides — light mode */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--aditi-navy);
+  --md-primary-fg-color--light: #003459;
+  --md-primary-fg-color--dark: #001526;
+  --md-accent-fg-color: var(--aditi-cyan);
+  --md-default-fg-color: var(--aditi-body);
+  --md-typeset-a-color: var(--aditi-cyan);
+}
+
+/* Material theme overrides — dark mode */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--aditi-navy);
+  --md-primary-fg-color--light: #003459;
+  --md-primary-fg-color--dark: #001526;
+  --md-accent-fg-color: var(--aditi-cyan);
+  --md-typeset-a-color: var(--aditi-cyan);
+}
+
+/* ---- Headings use Roboto ---- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3 {
+  color: var(--aditi-navy);
+}
+
+/* ---- Navigation tabs ---- */
+.md-tabs {
+  background-color: var(--aditi-navy);
+}
+
+/* ---- Header ---- */
+.md-header {
+  background-color: var(--aditi-navy);
+}
+
+/* ---- Landing page hero ---- */
+.md-typeset .hero {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.md-typeset .hero h1 {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--aditi-cyan) 0%, var(--aditi-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.md-typeset .hero .hero-tagline {
+  font-size: 1.25rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.md-typeset .hero .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.md-typeset .hero .hero-buttons .md-button {
+  font-weight: 600;
+}
+
+/* Primary CTA button — cyan */
+.md-typeset .hero .hero-buttons .md-button--primary {
+  background-color: var(--aditi-cyan);
+  border-color: var(--aditi-cyan);
+  color: var(--aditi-navy);
+}
+
+.md-typeset .hero .hero-buttons .md-button--primary:hover {
+  background-color: #17a0c4;
+  border-color: #17a0c4;
+}
+
+/* Secondary CTA buttons — outlined */
+.md-typeset .hero .hero-buttons .md-button:not(.md-button--primary) {
+  border-color: var(--aditi-cyan);
+  color: var(--aditi-cyan);
+}
+
+.md-typeset .hero .hero-buttons .md-button:not(.md-button--primary):hover {
+  background-color: var(--aditi-cyan);
+  color: var(--aditi-navy);
+}
+
+/* ---- Feature grid refinements ---- */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--aditi-cyan);
+  box-shadow: 0 4px 20px rgba(0, 32, 58, 0.1);
+}
+
+/* Card icon color */
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards .emojione,
+.md-typeset .grid.cards svg {
+  color: var(--aditi-cyan);
+}
+
+/* ---- Before/after section ---- */
+.md-typeset .before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .md-typeset .before-after {
+    grid-template-columns: 1fr;
+  }
+}
+
+.md-typeset .before-after .panel {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.md-typeset .before-after .panel h4 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--aditi-orange);
+}
+
+/* ---- Announcement bar ---- */
+.md-banner {
+  background: var(--aditi-navy);
+  color: #fff;
+}
+
+.md-banner a {
+  color: var(--aditi-cyan);
+}
+
+/* ---- Admonition accent ---- */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--aditi-cyan);
+}
+
+/* ---- Mermaid diagram sizing ---- */
+.md-typeset .mermaid {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* ---- Tag pill refinements ---- */
+.md-typeset .md-tags .md-tag {
+  font-weight: 500;
+  background-color: var(--aditi-cyan);
+  color: var(--aditi-navy);
+}
+
+/* ---- Code block font size tweak ---- */
+.md-typeset code {
+  font-size: 0.82em;
+}
+
+/* ---- Inline code ---- */
+[data-md-color-scheme="default"] .md-typeset code {
+  background-color: #e8f4f8;
+  color: var(--aditi-navy);
+}
+
+/* ---- Content tab indicator ---- */
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--aditi-cyan);
+}
+
+.md-typeset .tabbed-labels > .tabbed-label--active {
+  color: var(--aditi-cyan);
+}
+
+/* ---- Navigation instant progress bar ---- */
+.md-progress {
+  background-color: var(--aditi-cyan);
+}
+
+/* ---- Footer ---- */
+.md-footer {
+  background-color: var(--aditi-navy);
+}
+
+/* ---- Search highlight ---- */
+.md-search-result .md-typeset mark {
+  background-color: rgba(31, 179, 217, 0.3);
+}
+
+/* ---- Comparison table styling ---- */
+.md-typeset table.comparison th {
+  text-align: center;
+}
+
+.md-typeset table.comparison td:nth-child(2),
+.md-typeset table.comparison td:nth-child(3) {
+  text-align: center;
+}
+
+/* ---- Scrollbar accent (webkit) ---- */
+::-webkit-scrollbar-thumb {
+  background-color: var(--aditi-cyan);
+}
